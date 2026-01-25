@@ -222,9 +222,9 @@ pub trait VclBackend<T: VclResponse> {
             "sick"
         };
         if json {
-            vsb.write(&"[0, 0, ").unwrap();
+            vsb.write(&"[0, 0, \"").unwrap();
             vsb.write(&state).unwrap();
-            vsb.write(&"]").unwrap();
+            vsb.write(&"\"]").unwrap();
         } else {
             vsb.write(&"0/0\t").unwrap();
             vsb.write(&state).unwrap();
