@@ -144,9 +144,19 @@ impl HttpHeaders<'_> {
         self.field(HDR_METHOD)
     }
 
+    /// Set the method of an HTTP request
+    pub fn set_method(&mut self, value: &str) -> VclResult<()> {
+        self.change_header(HDR_METHOD, value)
+    }
+
     /// URL of an HTTP request, `None` for a response
     pub fn url(&self) -> Option<StrOrBytes<'_>> {
         self.field(HDR_URL)
+    }
+
+    /// Set the URL of an HTTP request
+    pub fn set_url(&mut self, value: &str) -> VclResult<()> {
+        self.change_header(HDR_URL, value)
     }
 
     /// Protocol of an object
